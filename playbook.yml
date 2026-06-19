@@ -6,12 +6,12 @@
   tasks:
     - name: Copy WAR file to Tomcat
       copy:
-        src: ../target/MyMavenAnsibleWebApp123.war
-        dest: /opt/tomcat/webapps/MyMavenAnsibleWebApp123.war
+        src: ../target/MyAnsible.war
+        dest: /opt/tomcat/webapps/MyAnsible.war
         remote_src: no
 
     - name: Restart Tomcat
       shell: |
-        /opt/tomcat/bin/shutdown.sh || true
+        /opt/tomcat/bin/shutdown.sh
         sleep 5
         /opt/tomcat/bin/startup.sh
